@@ -18,36 +18,27 @@ $(document).ready(function() {
 			corners : false
 		});
 		
-		$('#get').click(function() {
-			$('#pagePivot').load("getAride.html", function(){
+		$('#Profile').click(function() {
+			$('#pagePivot').load("Profile.html", function(){
 				$('#content').trigger('create');
-			});
-			$("#mypanel").panel("close");
-			$('#content').trigger('create');
-		});
-		
-		$('#give').click(function() {
-			$('#pagePivot').load("findAride.html", function(){
-				$('#content').trigger('create');
+				document.getElementById('messageBasedOnTime2').innerHTML = msg;
 			});
 			$("#mypanel").panel("close");
 			$('#content').trigger('create');
 		});
 		
 		$('#Profile').click(function() {
-			$('#content').load("Profile.html", function(){
+			$('#pagePivot').load("Profile.html", function(){
 				$('#content').trigger('create');
+				document.getElementById('messageBasedOnTime2').innerHTML = msg;
 			});
 			$("#mypanel").panel("close");
+			$('#content').trigger('create');
 		});
 		
-		$('#How').click(function() {
-			$('#pagePivot').load("howtos.html", function(){
-				$('#content').trigger('create');
-			});
-			$("#mypanel").panel("close");
+		
+		$("#mypanel").panel("close");
 		});
-			
 	});
 </script>
 <body id="body">
@@ -57,8 +48,8 @@ $(document).ready(function() {
 			<h1>Menu</h1>
 			<ul data-role="listview">
 				<li data-icon="false" id="Profile"><a>Profile</a></li>
-				<li data-icon="false" id="Get"><a>Get a ride</a></li>
-				<li data-icon="false" id="Give"><a>Give a ride</a></li>
+				<li data-icon="false" id="How"><a>Find A Ride</a></li>
+				<li data-icon="false" id="How"><a>Get A Ride</a></li>
 				<li data-icon="false" id="How"><a>How to's</a></li>
 			</ul>
 		</div>
@@ -68,8 +59,7 @@ $(document).ready(function() {
 		</div>
 		<div data-role="content" id="pagePivot">	
 	
-		<a href="findAride.html" class="ui-btn ui-shadow">Find a Ride</a>
-		<a href="getAride.html" class="ui-btn ui-shadow">Get a Ride</a>
+		get a ride page
        
 		
 		</div>	
@@ -87,5 +77,3 @@ $(document).ready(function() {
 	</script>
 </body>
 </html>
-
-  
