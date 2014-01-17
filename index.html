@@ -13,62 +13,8 @@
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile.structure-1.4.0.min.css" /> 
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script> 
 <script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script> 
-<<<<<<< HEAD
 <script type="text/javascript" src="js/main.js"></script>
-=======
 
-<script>
-	$(document).ready(function() {
-		
-		//get time and apply a message
-		var now = new Date();
-		var hours = now.getHours();
-		var msg;
-		if (hours < 12)
-			msg = "morning!";
-		else if (hours < 18)
-			msg = "afternoon!";
-		else
-			msg = "evening!";
-		document.getElementById('messageBasedOnTime').innerHTML = msg;
-
-		//No corners for the Menu button
-		$('#button').buttonMarkup({
-			corners : false
-		});
-		
-		$('#Profile').click(function() {
-			$('#pagePivot').load("Profile.html", function(){
-				$('#content').trigger('create');
-				document.getElementById('messageBasedOnTime2').innerHTML = msg;
-			});
-			$("#mypanel").panel("close");
-			$('#content').trigger('create');
-		});
-		
-		$('#get').click(function() {
-			$('#pagePivot').load("get.html", function(){
-				$('#content').trigger('create');
-				document.getElementById('messageBasedOnTime2').innerHTML = msg;
-			});
-			$("#mypanel").panel("close");
-			$('#content').trigger('create');
-		});
-		
-		$('#give').click(function() {
-			$('#pagePivot').load("give.html", function(){
-				$('#content').trigger('create');
-				document.getElementById('messageBasedOnTime2').innerHTML = msg;
-			});
-			$("#mypanel").panel("close");
-			$('#content').trigger('create');
-		});
-		
-		$("#mypanel").panel("close");
-		});
-	});
-</script>
->>>>>>> a5eb545513fe2b114f06143b3275cf62ae94fac1
 </head>
 
 <body id="body">
