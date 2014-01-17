@@ -1,3 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Commuter App</title>
+<meta id="extViewportMeta" name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<link rel="stylesheet" href="css/lm.css" />
+<link rel="stylesheet" href="css/jquery.mobile.icons.min.css" />
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile.structure-1.4.0.min.css" /> 
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script> 
+<script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script> 
+<script>
+$(document).ready(function() {
+		//No corners for the Menu button
+		$('#button').buttonMarkup({
+			corners : false
+		});
+		
+		$('#get').click(function() {
+			$('#pagePivot').load("getAride.html", function(){
+				$('#content').trigger('create');
+			});
+			$("#mypanel").panel("close");
+			$('#content').trigger('create');
+		});
+		
+		$('#give').click(function() {
+			$('#pagePivot').load("findAride.html", function(){
+				$('#content').trigger('create');
+			});
+			$("#mypanel").panel("close");
+			$('#content').trigger('create');
+		});
+		
+		$('#Profile').click(function() {
+			$('#content').load("Profile.html", function(){
+				$('#content').trigger('create');
+			});
+			$("#mypanel").panel("close");
+		});
+		
+		$('#How').click(function() {
+			$('#pagePivot').load("howtos.html", function(){
+				$('#content').trigger('create');
+			});
+			$("#mypanel").panel("close");
+		});
+			
+	});
+</script>
+<body id="body">
 
+	<div data-role="page" id="content" data-add-back-btn="true">
+		<div data-role="panel" id="mypanel" data-position="left" data-display="reveal">
+			<h1>Menu</h1>
+			<ul data-role="listview">
+				<li data-icon="false" id="Profile"><a>Profile</a></li>
+				<li data-icon="false" id="Get"><a>Get a ride</a></li>
+				<li data-icon="false" id="Give"><a>Give a ride</a></li>
+				<li data-icon="false" id="How"><a>How to's</a></li>
+			</ul>
+		</div>
+		<div data-role="header" id="tryHeader">
+			<a href="#mypanel" id="button">Menu</a>
+			<h1></h1>
+		</div>
+		<div data-role="content" id="pagePivot">	
+	
+		<a href="findAride.html" class="ui-btn ui-shadow">Find a Ride</a>
+		<a href="getAride.html" class="ui-btn ui-shadow">Get a Ride</a>
+       
+		
+		</div>	
+	</div>	
+	<script type='text/javascript'>
+		$(document).on('pageinit', function() {
+			$("#content").bind("swiperight", function() {
+				$("#mypanel").panel("open");
+			});
+			$("#content").bind("swipeleft", function() {
+				$("#mypanel").panel("close");
+			});
+			 
+		});
+	</script>
+</body>
+</html>
 
   
