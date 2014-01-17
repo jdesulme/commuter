@@ -1,4 +1,8 @@
 @CHARSET "UTF-8";
+
+a {
+    text-decoration: none !important;
+}
 .ui-mobile .ui-page .ui-content .ui-collapsible .ui-collapsible-heading .ui-btn-text {
     white-space : normal !important;
 }​
