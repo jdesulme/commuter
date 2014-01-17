@@ -1,2 +1,45 @@
- <div id="map_canvas" style="height:300px; width:100%"></div>
- <a data-role="button" id="backyback">Back</a>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Commuter App</title>
+<meta id="extViewportMeta" name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+<link rel="stylesheet" href="css/jquery.mobile.icons.min.css" />
+<link rel="stylesheet" type="text/css" href="css/lm.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile.structure-1.4.0.min.css" /> 
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script> 
+<script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script> 
+<script type="text/javascript" src="js/main.js"></script>
+<script src="//maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=AIzaSyAE21dXYNjJs_Z9zVxIq9g9J94VHPq8OIE" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+function initialize() {
+if (GBrowserIsCompatible()) {
+var map = new GMap2(document.getElementById("map_canvas"));
+map.setCenter(new GLatLng(37.4419, -122.1419), 13);
+
+// Add 10 markers to the map at random locations
+var bounds = map.getBounds();
+var southWest = bounds.getSouthWest();
+var northEast = bounds.getNorthEast();
+var lngSpan = northEast.lng() - southWest.lng();
+var latSpan = northEast.lat() - southWest.lat();
+for (var i = 0; i < 10; i++) {
+var point = new GLatLng(southWest.lat() + latSpan * Math.random(),
+southWest.lng() + lngSpan * Math.random());
+map.addOverlay(new GMarker(point));
+}
+}
+}
+
+</script>
+</head>
+<body onload="initialize()" onunload="GUnload()" style="font-family: Arial;border: 0 none;">
+<div id="map_canvas" style="width: 500px; height: 300px"></div>
+</body>
+</html>

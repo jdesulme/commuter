@@ -11,9 +11,9 @@
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile.structure-1.4.0.min.css" /> 
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script> 
 <script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script> 
-<link rel="stylesheet" href="jquery.ui.datepicker.mobile.css" /> 
-<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<script src="js/jquery.ui.datepicker.js"></script> 
+<script src="js/jquery.ui.datepicker.mobile.js"></script> 
+
 <script>
 $(document).ready(function() {
 		//No corners for the Menu button
@@ -21,39 +21,52 @@ $(document).ready(function() {
 			corners : false
 		});
 		
-		$('#Profile').click(function() {
-			$('#pagePivot').load("Profile.html", function(){
-				$('#content').trigger('create');
-				document.getElementById('messageBasedOnTime2').innerHTML = msg;
+		$('#get').click(function() {
+			$('#pagePivot').load("getAride.html", function(){
+				location.reload();
+			});
+			$("#mypanel").panel("close");
+		});
+		
+		$('#Give').click(function() {
+			$('#pagePivot').load("findAride.html", function(){
+				location.reload();
 			});
 			$("#mypanel").panel("close");
 			$('#content').trigger('create');
 		});
 		
 		$('#Profile').click(function() {
-			$('#pagePivot').load("Profile.html", function(){
-				$('#content').trigger('create');
-				document.getElementById('messageBasedOnTime2').innerHTML = msg;
+			$('#content').load("Profile.html", function(){
+				location.reload();
 			});
 			$("#mypanel").panel("close");
-			$('#content').trigger('create');
+		});
+		
+		$('#How').click(function() {
+			$('#pagePivot').load("howtos.html", function(){
+				location.reload();
+			});
+			$("#mypanel").panel("close");
 		});
 		
 		
 		$("#mypanel").panel("close");
 		});
+		
 	});
 </script>
+
 <body id="body">
 
 	<div data-role="page" id="content" data-add-back-btn="true">
 		<div data-role="panel" id="mypanel" data-position="left" data-display="reveal">
 			<h1>Menu</h1>
 			<ul data-role="listview">
-				<li data-icon="false" id="Profile"><a>Profile</a></li>
-				<li data-icon="false" id="Get"><a>Get a ride</a></li>
-				<li data-icon="false" id="Give"><a>Give a ride</a></li>
-				<li data-icon="false" id="How"><a>How to's</a></li>
+				<li data-icon="false" id="Profile"><a href="Profile.html">Profile</a></li>
+				<li data-icon="false" id="Get"><a href="findAride.html">Get a ride</a></li>
+				<li data-icon="false" id="Give"><a href="getAride.html">Give a ride</a></li>
+				<li data-icon="false" id="How"><a href="howtos.html"> How to's</a></li>
 			</ul>
 		</div>
 		<div data-role="header" id="tryHeader">
@@ -74,9 +87,20 @@ $(document).ready(function() {
         <input type="radio" name="radio-choice-1" id="radio-choice-2" value="choice-2">
         <label for="radio-choice-2">Female</label>
 
-		
-        <input type="text" data-role="date">	
-        	
+		<label for="select-choice-1" class="select">Select, native menu</label>
+        
+        <label for="select-choice-1" class="select">Day:</label>
+        <select name="select-choice-1" id="select-choice-1">
+        <option>Day:</option>
+        <option value="Monday">Monday</option>
+        <option value="Tuesday">Tuesday</option>
+        <option value="Wednesday">Wednesday</option>
+        <option value="Thursday">Thursday</option>
+        <option value="Friday">Friday</option>
+		</select>
+        
+        <label for="date">Date:</label>
+        <input type="date" name="date" id="date" value=""  />	      	
 		<div>
 		<p>
 		</p>

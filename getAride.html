@@ -18,22 +18,33 @@ $(document).ready(function() {
 			corners : false
 		});
 		
-		$('#Profile').click(function() {
-			$('#pagePivot').load("Profile.html", function(){
-				$('#content').trigger('create');
-				document.getElementById('messageBasedOnTime2').innerHTML = msg;
+		$('#get').click(function() {
+			$('#pagePivot').load("getAride.html", function(){
+				location.reload();
+			});
+			$("#mypanel").panel("close");
+		});
+		
+		$('#Give').click(function() {
+			$('#pagePivot').load("findAride.html", function(){
+				location.reload();
 			});
 			$("#mypanel").panel("close");
 			$('#content').trigger('create');
 		});
 		
 		$('#Profile').click(function() {
-			$('#pagePivot').load("Profile.html", function(){
-				$('#content').trigger('create');
-				document.getElementById('messageBasedOnTime2').innerHTML = msg;
+			$('#content').load("Profile.html", function(){
+				location.reload();
 			});
 			$("#mypanel").panel("close");
-			$('#content').trigger('create');
+		});
+		
+		$('#How').click(function() {
+			$('#pagePivot').load("howtos.html", function(){
+				location.reload();
+			});
+			$("#mypanel").panel("close");
 		});
 		
 		
@@ -47,10 +58,10 @@ $(document).ready(function() {
 		<div data-role="panel" id="mypanel" data-position="left" data-display="reveal">
 			<h1>Menu</h1>
 			<ul data-role="listview">
-				<li data-icon="false" id="Profile"><a>Profile</a></li>
-				<li data-icon="false" id="How"><a>Find A Ride</a></li>
-				<li data-icon="false" id="How"><a>Get A Ride</a></li>
-				<li data-icon="false" id="How"><a>How to's</a></li>
+				<li data-icon="false" id="Profile"><a href="Profile.html">Profile</a></li>
+				<li data-icon="false" id="Get"><a href="findAride.html">Get a ride</a></li>
+				<li data-icon="false" id="Give"><a href="getAride.html">Give a ride</a></li>
+				<li data-icon="false" id="How"><a href="howtos.html"> How to's</a></li>
 			</ul>
 		</div>
 		<div data-role="header" id="tryHeader">
@@ -59,9 +70,9 @@ $(document).ready(function() {
 		</div>
 		<div data-role="content" id="pagePivot">	
 	
-		get a ride page
+		<label for="slider">Radius (miles):</label>
+        <input type="range" name="slider" id="slider" value="50" min="0" max="100">
        
-		
 		</div>	
 	</div>	
 	<script type='text/javascript'>
