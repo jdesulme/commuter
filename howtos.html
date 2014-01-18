@@ -53,9 +53,40 @@ $(document).ready(function() {
 	});
 </script>
 <body>
-	<div>
-	<?php include 'try.php'; ?>
+
+<div data-role="collapsible-set">
+	<div data-role="panel" id="mypanel" data-position="left" data-display="reveal">
+			<h1>Menu</h1>
+			<ul data-role="listview">
+				<li data-icon="false" id="Profile"><a href="Profile.html">Profile</a></li>
+				<li data-icon="false" id="Get"><a href="findAride.html">Get a ride</a></li>
+				<li data-icon="false" id="Give"><a href="getAride.html">Give a ride</a></li>
+				<li data-icon="false" id="cancel"><a href="try2.html" rel="external"> Track a ride</a></li>
+				<li data-icon="false" id="cancel"><a href="cancelRide.html"> Cancel a ride</a></li>
+				<li data-icon="false" id="How"><a href="howtos.html"> How to's</a></li>
+			</ul>
+		</div>
+		<div data-role="header" id="tryHeader">
+			<a href="#mypanel" id="button">Menu</a>
+			<h1></h1>
+		</div>
+	<div data-role="collapsible" data-collapsed="false">
+	<h3>How to find a ride</h3>
+	<p>Click on find a ride</p>
 	</div>
 	
+	<div data-role="collapsible">
+	<h3>How to offer a ride</h3>
+	<p>Click on give a ride</p>
+	</div>
+	
+	<div data-role="collapsible">
+	<h3>How to update</h3>
+	<p>Click on update profile</p>
+	</div>
+	
+</div>
+	
+
 </body>
 </html>

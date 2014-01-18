@@ -1,16 +1,9 @@
-<?php
-    echo "My first PHP script!";
-	?> 
-    <?php
-    // Create connection
-    $con=mysqli_connect("192.168.5.118:3306","root","root","commuter");
-
-    // Check connection
-    if (mysqli_connect_errno())
-    { 
-    echo "Failed to connect to MySQL: " . mysqli_connect_error();
-	}
-
-	echo "worked";
-    mysqli_close($con);
-	?>
+        <?php
+		$to = "talhouar.loic@gmail.com";
+		$subject = "You've got a ride!";
+		$message = "Congrats you got a ride, within 5 miles. Non smoking. Driver's phone number: 4123036542";
+		$from = "RideMatch@gmail.com";
+		$headers = "From:" . $from;
+		mail($to,$subject,$message,$headers);
+		echo "Mail Sent.";
+		?>

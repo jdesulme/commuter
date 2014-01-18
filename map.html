@@ -28,9 +28,9 @@
             			if ( status === 'OK' ) {
             				var whatever=new google.maps.MarkerImage("images/libertymutual.png");
             				var clientPosition = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-            				$('#map_canvas').gmap('addMarker', {'position': new google.maps.LatLng(43.084238, -70.772700), 'bounds': true});
-            				$('#map_canvas').gmap('addMarker', {'position': new google.maps.LatLng(43.080981, -70.773169), 'bounds': true});
-            				$('#map_canvas').gmap('addMarker', {'position': new google.maps.LatLng(43.082260, -70.772602), 'bounds': true});
+            				$('#map_canvas').gmap('addMarker', {'position': new google.maps.LatLng(43.084238, -70.772700), 'bounds': false});
+            				$('#map_canvas').gmap('addMarker', {'position': new google.maps.LatLng(43.080981, -70.773169), 'bounds': false});
+            				$('#map_canvas').gmap('addMarker', {'position': new google.maps.LatLng(43.082260, -70.772602), 'bounds': false});
             				$('#map_canvas').gmap('addMarker', {'position': clientPosition, 'bounds': true});
             				$('#map_canvas').gmap('addShape', 'Circle', { 
             					'strokeWeight': 0, 
@@ -41,6 +41,7 @@
             					'clickable': true,
             					'zoom': 1
             				});
+            				$('#map_canvas').gmap('option', 'zoom', 14);
             			}
             		});   
             	});

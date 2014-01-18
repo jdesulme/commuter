@@ -58,6 +58,8 @@ $(document).ready(function() {
 				<li data-icon="false" id="Profile"><a href="Profile.html">Profile</a></li>
 				<li data-icon="false" id="Get"><a href="findAride.html">Get a ride</a></li>
 				<li data-icon="false" id="Give"><a href="getAride.html">Give a ride</a></li>
+				<li data-icon="false" id="cancel"><a href="try2.html" rel="external"> Track a ride</a></li>
+				<li data-icon="false" id="cancel"><a href="cancelRide.html"> Cancel a ride</a></li>
 				<li data-icon="false" id="How"><a href="howtos.html"> How to's</a></li>
 			</ul>
 		</div>
@@ -70,7 +72,33 @@ $(document).ready(function() {
 		<a href="findAride.html" class="ui-btn ui-shadow">Find a Ride</a>
 		<a href="getAride.html" class="ui-btn ui-shadow">Give a Ride</a>
        
-		
+		<div class="list">
+	  <label class="item item-input item-stacked-label">
+	    <span class="input-label">First Name</span>
+	    <input type="text" placeholder="Loic" ng-model="users.firstName">
+	  </label>
+	  <label class="item item-input item-stacked-label">
+	    <span class="input-label">Talhouarne</span>
+	    <input type="text" placeholder="Talhouarne" ng-model="users.lastName">
+	  </label>
+	  <label class="item item-input item-stacked-label">
+	    <span class="input-label">Email</span>
+	    <input type="text" placeholder="Loic.Talhouarne@Libertyutual.com" ng-model="users.email">
+	  </label>
+  	  <label class="item item-input item-stacked-label">
+	    <span class="input-label">Dover-West</span>
+	    <input type="text" placeholder="Dover West" ng-model="users.office">
+	  </label>
+	  <label class="item item-input item-stacked-label">
+	    <span class="input-label">Departure</span>
+	    <input type="time" placeholder="8:00 AM" ng-model="users.preferredArrivalTime">
+	  </label>
+	  <label class="item item-input item-stacked-label">
+	    <span class="input-label">Arrival</span>
+	    <input type="time" placeholder="4:00 PM" ng-model="users.preferredDepartureTime">
+	  </label>
+	  <a href="profile.html" style="text-decoration:none"><button>Save</button></a>
+	</div>
 		</div>	
 	</div>	
 	<script type='text/javascript'>

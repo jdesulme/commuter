@@ -73,6 +73,8 @@ $(document).ready(function() {
 				<li data-icon="false" id="Profile"><a href="Profile.html">Profile</a></li>
 				<li data-icon="false" id="Get"><a href="findAride.html">Get a ride</a></li>
 				<li data-icon="false" id="Give"><a href="getAride.html">Give a ride</a></li>
+				<li data-icon="false" id="cancel"><a href="try2.html" rel="external"> Track a ride</a></li>
+				<li data-icon="false" id="cancel"><a href="cancelRide.html"> Cancel a ride</a></li>
 				<li data-icon="false" id="How"><a href="howtos.html"> How to's</a></li>
 			</ul>
 		</div>
@@ -82,11 +84,15 @@ $(document).ready(function() {
 		</div>
 		<div data-role="content" id="pagePivot">	
 	
-		<label for="slider">Radius (miles):</label>
+		<label for="slider">Radius(miles):</label>
         <input type="range" name="slider" id="slider" value="50" min="0" max="100">
         
+        <label >Office Arrival:</label>
+        <input type="time" >
+        <label >Office Departure:</label>
+        <input type="time" >
+        
         <fieldset data-role="controlgroup">
-    	<legend>Checkboxes, vertical controlgroup:</legend>
     	<input type="checkbox" name="checkbox-1a" id="checkbox-1a" checked="">
     	<label for="checkbox-1a">Smoke</label>
     	<input type="radio" name="radio-choice-1" id="radio-choice-1" value="choice-1" checked="checked">
@@ -106,7 +112,7 @@ $(document).ready(function() {
         <option value="Friday">Friday</option>
 		</select>
  
-
+		Date:
         <input type="date" name="date" id="date" />  	
 		<div>
 		<p>
