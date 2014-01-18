@@ -52,38 +52,10 @@ $(document).ready(function() {
 		});
 	});
 </script>
-<body id="body">
-
-	<div data-role="page" id="content" data-add-back-btn="true">
-		<div data-role="panel" id="mypanel" data-position="left" data-display="reveal">
-			<h1>Menu</h1>
-			<ul data-role="listview">
-				<li data-icon="false" id="Profile"><a href="Profile.html">Profile</a></li>
-				<li data-icon="false" id="Get"><a href="findAride.html">Get a ride</a></li>
-				<li data-icon="false" id="Give"><a href="getAride.html">Give a ride</a></li>
-				<li data-icon="false" id="How"><a href="howtos.html"> How to's</a></li>
-			</ul>
-		</div>
-		<div data-role="header" id="tryHeader">
-			<a href="#mypanel" id="button">Menu</a>
-			<h1></h1>
-		</div>
-		<div data-role="content" id="pagePivot">	
+<body>
+	<div>
+	<?php include 'try.php'; ?>
+	</div>
 	
-		How tos
-       
-		</div>	
-	</div>	
-	<script type='text/javascript'>
-		$(document).on('pageinit', function() {
-			$("#content").bind("swiperight", function() {
-				$("#mypanel").panel("open");
-			});
-			$("#content").bind("swipeleft", function() {
-				$("#mypanel").panel("close");
-			});
-			 
-		});
-	</script>
 </body>
 </html>

@@ -3,6 +3,11 @@
 a {
     text-decoration: none !important;
 }
+
+.map_canvas img {
+    max-width: none !important;
+}
+
 .ui-mobile .ui-page .ui-content .ui-collapsible .ui-collapsible-heading .ui-btn-text {
     white-space : normal !important;
 }​

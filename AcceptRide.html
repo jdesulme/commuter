@@ -11,23 +11,12 @@
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile.structure-1.4.0.min.css" /> 
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script> 
 <script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script> 
-
-<script src="js/jquery.mobile.datepicker.js"></script> 
-<script src="js/jquery.ui.datepicker.js"></script> 
-<link rel="stylesheet" href="css/jquery.mobile.datepicker.css" />
-
 <script>
-$( document ).bind( "mobileinit", function(){
-    $.mobile.page.prototype.options.degradeInputs.date = true;
-  });
 $(document).ready(function() {
 		//No corners for the Menu button
 		$('#button').buttonMarkup({
 			corners : false
 		});
-		
-		$( "#datepicker" ).datepicker();
-
 		
 		$('#get').click(function() {
 			$('#pagePivot').load("getAride.html", function(){
@@ -52,20 +41,19 @@ $(document).ready(function() {
 		});
 		
 		$('#How').click(function() {
-			$('#content').load("howtos.html", function(){
-				location.reload();			
+			$('#pagePivot').load("howtos.html", function(){
+				location.reload();
 			});
 			$("#mypanel").panel("close");
 		});
-			
+		
+		
 		$("#mypanel").panel("close");
 		});
-		
 	});
 </script>
-
-
 <body id="body">
+
 	<div data-role="page" id="content" data-add-back-btn="true">
 		<div data-role="panel" id="mypanel" data-position="left" data-display="reveal">
 			<h1>Menu</h1>
@@ -82,44 +70,16 @@ $(document).ready(function() {
 		</div>
 		<div data-role="content" id="pagePivot">	
 	
-		<label for="slider">Radius (miles):</label>
-        <input type="range" name="slider" id="slider" value="50" min="0" max="100">
-        
-        <fieldset data-role="controlgroup">
-    	<legend>Checkboxes, vertical controlgroup:</legend>
-    	<input type="checkbox" name="checkbox-1a" id="checkbox-1a" checked="">
-    	<label for="checkbox-1a">Smoke</label>
-    	<input type="radio" name="radio-choice-1" id="radio-choice-1" value="choice-1" checked="checked">
-        <label for="radio-choice-1">Male</label> <label for="radio-choice-1">F</label>
-        <input type="radio" name="radio-choice-1" id="radio-choice-2" value="choice-2">
-        <label for="radio-choice-2">Female</label>
-
-		<label for="select-choice-1" class="select">Select, native menu</label>
-        
-        <label for="select-choice-1" class="select">Day:</label>
-        <select name="select-choice-1" id="select-choice-1">
-        <option>Day:</option>
-        <option value="Monday">Monday</option>
-        <option value="Tuesday">Tuesday</option>
-        <option value="Wednesday">Wednesday</option>
-        <option value="Thursday">Thursday</option>
-        <option value="Friday">Friday</option>
-		</select>
- 
-
-        <input type="date" name="date" id="date" />  	
-		<div>
-		<p>
-		</p>
-		<p>
-		</p>
-		<p>
-		</p>
-		</div>
-		<a id="map" href="map.html" rel="external"class="ui-btn ui-shadow" >Map it!</a>
-</fieldset>
-       
+		<div style="text-align:center;">
+		<h2>Do you want to accept this ride?</h2>
 		
+		<h4>The driver <span style="font-weight:bold;">IS NOT </span>a smoker</h4>
+		<h4>The driver must drive <span style="font-weight:bold;">5 miles </span>to pick you up</h4>
+
+		<a href="confirmation.html" class="ui-btn ui-shadow">Confirm</a>
+		<a href="map.html" rel="external" class="ui-btn ui-shadow">Decline, back to Map</a>
+	</div> 
+       
 		</div>	
 	</div>	
 	<script type='text/javascript'>

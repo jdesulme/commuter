@@ -11,60 +11,43 @@
                 right:0;
             }
         </style>        
-        <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script> 
-                     
+        <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>              
         <script src="https://d10ajoocuyu32n.cloudfront.net/jquery-1.9.1.min.js"></script>
         <script src="https://d10ajoocuyu32n.cloudfront.net/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
         <script type="text/javascript" src="http://jquery-ui-map.googlecode.com/svn/trunk/ui/min/jquery.ui.map.full.min.js"></script>
         <script type="text/javascript" src="http://jquery-ui-map.googlecode.com/svn/trunk/ui/jquery.ui.map.extensions.js"></script>
         <script>
-        
-       
-            $(document).on('pageshow', '#main', function() {     
-            	
-            	
+            $(document).on('pageshow', '#main', function() {  
             	$('#map_canvas').gmap().bind('init', function(evt, map) {
             		$('#map_canvas').gmap('getCurrentPosition', function(position, status) {
             			if ( status === 'OK' ) {
-            				var whatever=new google.maps.MarkerImage("images/libertymutual.png");
             				var clientPosition = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-            				$('#map_canvas').gmap('addMarker', {'position': new google.maps.LatLng(43.084238, -70.772700), 'bounds': true});
-            				$('#map_canvas').gmap('addMarker', {'position': new google.maps.LatLng(43.080981, -70.773169), 'bounds': true});
-            				$('#map_canvas').gmap('addMarker', {'position': new google.maps.LatLng(43.082260, -70.772602), 'bounds': true});
             				$('#map_canvas').gmap('addMarker', {'position': clientPosition, 'bounds': true});
             				$('#map_canvas').gmap('addShape', 'Circle', { 
             					'strokeWeight': 0, 
             					'fillColor': "#008595", 
             					'fillOpacity': 0.25, 
             					'center': clientPosition, 
-            					'radius': 3000, 
-            					'clickable': true,
-            					'zoom': 1
+            					'radius': 500, 
+            					'clickable': false,
+            					'zoom':10
             				});
             			}
             		});   
             	});
             });
-        
-           
-        
         </script>  
     </head>
-    <body >
-        <div data-role="page" id="main">  
-              
+    <body>
+        <div data-role="page" id="main">          
             <div data-role="content">
-                <a href="map.html">
-                
-                    Loading
-                    
-                </a>                 
-                    <a href="AcceptRide.html">
-                    <div id="map_canvas" style="width:100%; height:100%; max-width: none;">                   
-                    </div>
-                    </a>                       
+                <p>
+                    TEST SITE
+                </p>
+                <p>
+                    <div id="map_canvas"></div>
+                </p>
             </div>
         </div>
-        
     </body>
 </html>
